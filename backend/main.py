@@ -1,10 +1,9 @@
 from fastapi import FastAPI, UploadFile, File, Form, Request
-from sqlalchemy.orm import Session
+from fastapi.responses import FileResponse
 import os
-import shutil
 
-from database import SessionLocal, engine
-from models.table_model import Base, Message
+from database import engine
+from models.table_model import Base
 from config import PHOTO_DIR
 
 from controllers.message_controller import MessageController
@@ -15,6 +14,12 @@ Base.metadata.creat_all(bind=engine)
 app = FastAPI()
 
 os.makedirs(PHOTO_DIR, exist_ok=True)
+
+
+@app.get("/", include_in_schema=False)
+async def index(request: Request):
+    return FileResponse("../fontend/templates/index.html", media_type="text/html")
+
 
 
 @app.post("/message")
