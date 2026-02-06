@@ -26,3 +26,19 @@ class MessageModel:
         finally:
             db.close()
 
+    # 取得所有訊息
+    @staticmethod
+    async def get_messages():
+        db: Session = SessionLocal()
+        try:
+            msgs = db.query(Message).all()
+
+            result = [
+                {"username": m.username, "content": m.content, "image_url": m.image_url}
+                for m in msgs
+            ]
+            return result
+        except Exception as e:
+            return {"error": True, "msg": str(e)}
+        finally:
+            db.close()

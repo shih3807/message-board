@@ -8,6 +8,7 @@ from models.table_model import Base, Message
 from config import PHOTO_DIR
 
 from controllers.message_controller import MessageController
+from models.message_model import MessageModel
 
 Base.metadata.creat_all(bind=engine)
 
@@ -24,3 +25,7 @@ async def post_message(
     image: UploadFile = File(None),
 ):
     return await MessageController.create_message(request, username, content, image)
+
+@app.get("/message")
+async def get_message(request: Request):
+    return await MessageModel.get_messages()
