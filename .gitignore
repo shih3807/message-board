@@ -12,3 +12,5 @@ message-board-venv/
 .prettierrc
 pyproject.toml
 .editorconfig
+
+.DS_Store
