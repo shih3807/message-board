@@ -6,3 +6,9 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+message-board-venv/
+
+# editor
+.prettierrc
+pyproject.toml
+.editorconfig
