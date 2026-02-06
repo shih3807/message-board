@@ -1,7 +1,5 @@
 from fastapi import UploadFile, File, Form, Request
-from sqlalchemy.orm import Session
 
-from database import SessionLocal
 from models.message_model import MessageModel
 from services.storage_service import StorageService
 
