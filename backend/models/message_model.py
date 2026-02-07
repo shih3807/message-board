@@ -31,7 +31,7 @@ class MessageModel:
     async def get_messages():
         db: Session = SessionLocal()
         try:
-            msgs = db.query(Message).all()
+            msgs = db.query(Message).order_by(Message.created_at.desc()).all()
 
             result = [
                 {"username": m.username, "content": m.content, "image_url": m.image_url}
