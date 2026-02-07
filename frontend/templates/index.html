@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>留言板</title>
+    <!-- 設定 icon -->
+    <link rel="icon" href="/static/image/send.png" />
+    <!-- 字體 -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="messages_container">
+      <div class="messages_title">留言板</div>
+
+      <form id="messageForm" class="messages_form">
+        <input
+          type="text"
+          id="username"
+          class="messages_form_username"
+          placeholder="請輸入您的用戶名"
+        />
+        <input
+          type="text"
+          id="content"
+          class="messages_form_content"
+          placeholder="請輸入留言內容"
+        />
+        <input
+          type="file"
+          id="image"
+          accept="image/*"
+          class="messages_form_image"
+        />
+        <button type="submit" class="messages_form_button">送出</button>
+      </form>
+
+      <div id="messagesContent" class="messages_content">
+        <!-- 留言 -->
+        <div class="messages_content_msg">
+          <div class="messages_content_msg_name">User Name</div>
+          <div class="messages_content_msg_text">這是一則留言哦哦！</div>
+          <img src="/static/image/send.png" alt="image" class="msg-img" />
+        </div>
+      </div>
+    </div>
+
+    <script src="/static/main.js" defer></script>
+  </body>
+</html>
