@@ -4,12 +4,12 @@ from fastapi.staticfiles import StaticFiles
 import os
 from pathlib import Path
 
-from database import engine
-from models.table_model import Base
-from config import PHOTO_DIR
+from backend.database import engine
+from backend.models.table_model import Base
+from backend.config import PHOTO_DIR
 
-from controllers.message_controller import MessageController
-from models.message_model import MessageModel
+from backend.controllers.message_controller import MessageController
+from backend.models.message_model import MessageModel
 
 Base.metadata.create_all(bind=engine)
 

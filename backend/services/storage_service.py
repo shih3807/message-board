@@ -1,6 +1,6 @@
 import shutil
 from fastapi import UploadFile
-from config import PHOTO_DIR
+from backend.config import PHOTO_DIR
 
 
 class StorageService:

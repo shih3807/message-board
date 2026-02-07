@@ -1,6 +1,6 @@
 from sqlalchemy import Column, String, Integer, DateTime, func
 from datetime import datetime, timezone
-from database import Base
+from backend.database import Base
 
 class Message(Base):
     __tablename__ = "messages"

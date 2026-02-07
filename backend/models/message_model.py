@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
-from models.table_model import Message
+from backend.models.table_model import Message
 
-from database import SessionLocal
+from backend.database import SessionLocal
 
 
 class MessageModel:

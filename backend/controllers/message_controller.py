@@ -1,7 +1,7 @@
 from fastapi import UploadFile, File, Form, Request
 
-from models.message_model import MessageModel
-from services.storage_service import StorageService
+from backend.models.message_model import MessageModel
+from backend.services.storage_service import StorageService
 
 
 class MessageController:
