@@ -1,5 +1,4 @@
 from sqlalchemy import Column, String, Integer, DateTime, func
-from datetime import datetime, timezone
 from backend.database import Base
 
 class Message(Base):

@@ -39,7 +39,7 @@ messagesView = {
       let html = `<div class="messages_content_msg_name">${msg.username || ''}</div>
           <div class="messages_content_msg_text">${msg.content || ''}</div>`;
       if (msg.image_url) {
-        html += `<img src="/${msg.image_url}" alt="image" class="msg-img">`;
+        html += `<img src="${msg.image_url}" alt="image" class="msg-img">`;
       }
       div.innerHTML = html;
       messagesContent.appendChild(div);
