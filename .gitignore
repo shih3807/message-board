@@ -14,3 +14,4 @@ pyproject.toml
 .editorconfig
 
 .DS_Store
+__pycache__
