@@ -13,5 +13,11 @@ message-board-venv/
 pyproject.toml
 .editorconfig
 
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# macOS
 .DS_Store
-__pycache__

@@ -1,10 +1,18 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
+from dotenv import load_dotenv
+import os
 
-DATABASE_URL = "sqlite:///./test.db"
+load_dotenv()
 
-engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
+DATABASE_URL = f"postgresql+psycopg2://{os.getenv('POSTGRES_USER')}:" \
+               f"{os.getenv('POSTGRES_PASSWORD')}@" \
+               f"{os.getenv('POSTGRES_HOST')}:{os.getenv('POSTGRES_PORT')}/" \
+               f"{os.getenv('POSTGRES_DB')}"
 
-SessionLocal = sessionmaker(bind=engine)
+engine = create_engine(DATABASE_URL, pool_size=5,
+    max_overflow=10)
+
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 Base = declarative_base()
